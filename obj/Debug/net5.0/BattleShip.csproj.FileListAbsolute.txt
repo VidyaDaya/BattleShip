@@ -1,0 +1,16 @@
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\BattleShip.exe
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\BattleShip.deps.json
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\BattleShip.runtimeconfig.json
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\BattleShip.runtimeconfig.dev.json
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\BattleShip.dll
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\ref\BattleShip.dll
+D:\CSharpPractice\BattleShip\bin\Debug\net5.0\BattleShip.pdb
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.csprojAssemblyReference.cache
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.AssemblyInfoInputs.cache
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.AssemblyInfo.cs
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.csproj.CoreCompileInputs.cache
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.dll
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\ref\BattleShip.dll
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.pdb
+D:\CSharpPractice\BattleShip\obj\Debug\net5.0\BattleShip.genruntimeconfig.cache
