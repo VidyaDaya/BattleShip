@@ -9,7 +9,7 @@ namespace Interfaces{
 
     public interface IShip
     {
-        public void CreateShip(int length, int x, int y);
+        public void CreateShip(int length, int x, int y,BoardStatus[,] statusBoard);
     }
 
     public interface IAttacker
