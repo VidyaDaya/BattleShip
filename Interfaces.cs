@@ -1,9 +1,10 @@
 using Enums;
 
 namespace Interfaces{
+
      public interface IBoard
     {
-        public void CreateBoard(int rows, int columns);
+        public BoardStatus[,] CreateBoard(int rows, int columns);
     }
 
     public interface IShip
