@@ -9,38 +9,49 @@ namespace BattleShip
         static void Main(string[] args)
         {
             Board BattleShipBoard=new Board();
-            var boardStatus= BattleShipBoard.CreateBoard();
+            BattleShipBoard.CreateBoard();
         
             Ship newShip= new Ship();
-            newShip.GetShipDetails(boardStatus);
-            BattleShipBoard.CheckResult(boardStatus);
+            newShip.GetShipDetails(BattleShipBoard.boardStatus);
+            Attacker attacker= new Attacker();
+            attacker.LaunchAttack(BattleShipBoard.boardStatus);
+             for (int i = 0; i < 10; i++)
+                {
+                    for (int j = 0; j < 10; j++)
+                    {
+                        Console.Write(BattleShipBoard.boardStatus[i, j]);
+                    }
+                    Console.WriteLine(" ");
+                }
+            BattleShipBoard.CheckResult();
         }
     }
 
     public class Board: IBoard
     {
-        public BoardStatus[,] CreateBoard(int rows=10, int columns=10)
+        public BoardStatus[,] boardStatus;
+
+        public void CreateBoard(int rows=10, int columns=10)
         {
-            BoardStatus[,] statusBoard = new BoardStatus[rows, columns];
+           boardStatus = new BoardStatus[rows, columns];
         
             for (int i = 0; i < rows; i++)
                 {
                     for (int j = 0; j < columns; j++)
                     {
-                        statusBoard[i, j] = BoardStatus.Empty;
+                        boardStatus[i, j] = BoardStatus.Empty;
                     }
                 }
 
-            return statusBoard;
         }
 
-        public void CheckResult(BoardStatus[,] statusBoard)
+        public void CheckResult()
         {
             for(int i=0;i<10;i++)
             {
                 for(int j=0;j<10;j++)
                 {
-                    if(statusBoard[i,j]==BoardStatus.Ship)
+                    if(boardStatus[i,j]==BoardStatus.Ship)
                     {
                         return;
                     }
@@ -49,7 +60,6 @@ namespace BattleShip
 
             Console.WriteLine("You WON!!!");
             Environment.Exit(1);
-
         }
     }
 
@@ -66,6 +76,7 @@ namespace BattleShip
             char direction=Convert.ToChar(Console.ReadLine());
             CreateShip(length,row,column,direction,statusBoard);
         }
+        
         public void CreateShip(int length, int x, int y,char direction,BoardStatus[,] statusBoard)
         {
 
@@ -92,41 +103,39 @@ namespace BattleShip
                }
            }
 
-            for (i = 0; i < 10; i++)
-                {
-                    for (j = 0; j < 10; j++)
-                    {
-                        Console.Write("{0} ",statusBoard[i,j]);
-                    }
-                    Console.WriteLine("\n");
-                }
+            // for (i = 0; i < 10; i++)
+            //     {
+            //         for (j = 0; j < 10; j++)
+            //         {
+            //             Console.Write("{0} ",statusBoard[i,j]);
+            //         }
+            //         Console.WriteLine("\n");
+            //     }
            
         }
     }
 
     public class Attacker: IAttacker
     {
-
-        public AttackOutcome Attack(BoardStatus[,] boardStatus,int x, int y)
+        public void LaunchAttack(BoardStatus[,] boardStatus)
         {
-            if(boardStatus[x,y]==BoardStatus.Ship)
+            Console.WriteLine("Enter the row and column number to launch attack");
+            int x=Convert.ToInt32(Console.ReadLine());
+            int y=Convert.ToInt32(Console.ReadLine());
+            Attack(boardStatus,x,y);
+        }
+
+        private void Attack(BoardStatus[,] boardStatus,int x, int y)
+        {
+            if(boardStatus[x-1,y-1]==BoardStatus.Ship)
             {
-                boardStatus[x,y]=BoardStatus.Hit;
-                return AttackOutcome.Hit;
+                boardStatus[x-1,y-1]=BoardStatus.Hit;
             }
             else
             {
-                boardStatus[x,y]=BoardStatus.Miss;
-                return AttackOutcome.Miss;
+                boardStatus[x-1,y-1]=BoardStatus.Miss;
             }
         }
     }
-
-
-
-
-   
-
-
 
 }

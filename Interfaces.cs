@@ -4,7 +4,7 @@ namespace Interfaces{
 
      public interface IBoard
     {
-        public BoardStatus[,] CreateBoard(int rows, int columns);
+        public void CreateBoard(int rows, int columns);
     }
 
     public interface IShip
@@ -14,6 +14,6 @@ namespace Interfaces{
 
     public interface IAttacker
     {
-        public AttackOutcome Attack(BoardStatus[,] boardStatus, int x, int y);
+        public void LaunchAttack(BoardStatus[,] boardStatus);
     }
 }
