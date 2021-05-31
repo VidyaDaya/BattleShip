@@ -12,9 +12,9 @@ namespace BattleShip
             BattleShipBoard.CreateBoard();
         
             Ship newShip= new Ship();
-            newShip.GetShipDetails(BattleShipBoard.boardStatus);
+            newShip.GetShipDetails(BattleShipBoard);
             Attacker attacker= new Attacker();
-            attacker.LaunchAttack(BattleShipBoard.boardStatus);
+            attacker.LaunchAttack(BattleShipBoard);
              for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 10; j++)

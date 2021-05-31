@@ -2,15 +2,22 @@ using System;
 using Enums;
 using Interfaces;
 
-namespace BattleShip{
+namespace BattleShip
+{
+
 public class Board: IBoard
     {
         public BoardStatus[,] boardStatus;
 
-        public void CreateBoard(int rows=10, int columns=10)
+        public int rows;
+        public int columns;
+
+        public void CreateBoard(int row=10, int column=10)
         {
+            rows=row;
+           columns=column;
            boardStatus = new BoardStatus[rows, columns];
-        
+           
             for (int i = 0; i < rows; i++)
                 {
                     for (int j = 0; j < columns; j++)

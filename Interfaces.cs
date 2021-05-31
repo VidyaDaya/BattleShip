@@ -1,4 +1,5 @@
 using Enums;
+using BattleShip;
 
 namespace Interfaces{
 
@@ -9,11 +10,11 @@ namespace Interfaces{
 
     public interface IShip
     {
-        public void CreateShip(int length, int x, int y,char direction,BoardStatus[,] statusBoard);
+        public void CreateShip(int length, int x, int y,char direction,Board board);
     }
 
     public interface IAttacker
     {
-        public void LaunchAttack(BoardStatus[,] boardStatus);
+        public void LaunchAttack(Board board);
     }
 }
